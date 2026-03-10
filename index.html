@@ -3,77 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIP Welcome Offer - Claim Your €5,000</title>
+    <title>VIP Welcome Boost - €5,000 + 500 Free Spins</title>
     <style>
         :root {
             --gold: #d4af37;
+            --gold-glow: rgba(212, 175, 55, 0.6);
             --dark-bg: #0a0a0a;
-            --card-bg: #1a1a1a;
+            --card-bg: #161616;
             --text-white: #ffffff;
         }
         body {
             margin: 0;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             background-color: var(--dark-bg);
             color: var(--text-white);
             text-align: center;
+            line-height: 1.6;
         }
         .hero {
             padding: 60px 20px;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1596838132731-dd9d7a8383b9?auto=format&fit=crop&q=80&w=1200') center/cover;
-            border-bottom: 3px solid var(--gold);
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1596838132731-dd9d7a8383b9?auto=format&fit=crop&q=80&w=1200') center/cover;
+            border-bottom: 2px solid var(--gold);
         }
-        h1 { font-size: 3rem; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
-        .bonus-amount { font-size: 4rem; font-weight: bold; display: block; margin: 10px 0; text-shadow: 0 0 20px rgba(212, 175, 55, 0.5); }
+        
+        /* Logo Styling */
+        .logo-wrapper {
+            margin-bottom: 30px;
+        }
+        .main-logo {
+            max-width: 220px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        .main-logo:hover {
+            transform: scale(1.05);
+        }
+
+        h1 { font-size: 2.2rem; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0; }
+        
+        .bonus-amount { 
+            font-size: clamp(2.5rem, 8vw, 4.5rem); 
+            font-weight: 900; 
+            display: block; 
+            margin: 15px 0; 
+            color: #fff;
+            text-shadow: 0 0 20px var(--gold-glow); 
+            line-height: 1.1;
+        }
+        
+        /* Timer Styles */
+        .timer-container {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold);
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .timer-label { font-size: 0.8rem; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; font-weight: bold; letter-spacing: 1px; }
+        #countdown { font-family: 'Courier New', monospace; font-size: 1.8rem; font-weight: bold; letter-spacing: 2px; color: #fff; }
+
         .cta-button {
             display: inline-block;
-            background-color: var(--gold);
-            color: black;
-            padding: 20px 40px;
+            background: linear-gradient(135deg, #f9df7b 0%, #d4af37 50%, #b38728 100%);
+            color: #000;
+            padding: 20px 45px;
             font-size: 1.5rem;
-            font-weight: bold;
+            font-weight: 800;
             text-decoration: none;
-            border-radius: 50px;
-            margin-top: 30px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            border-radius: 5px;
+            margin-top: 25px;
+            transition: all 0.3s ease;
             text-transform: uppercase;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.5);
         }
-        .cta-button:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--gold); }
-        .features { display: flex; justify-content: center; gap: 20px; padding: 40px; flex-wrap: wrap; }
-        .feature-card { background: var(--card-bg); padding: 20px; border-radius: 10px; width: 250px; border: 1px solid #333; }
-        .feature-card h3 { color: var(--gold); }
-        .footer { padding: 40px; font-size: 0.8rem; color: #888; border-top: 1px solid #333; }
-        @media (max-width: 600px) { h1 { font-size: 2rem; } .bonus-amount { font-size: 2.5rem; } }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 12px 25px var(--gold-glow); }
+
+        .features { display: flex; justify-content: center; gap: 20px; padding: 50px 20px; flex-wrap: wrap; }
+        .feature-card { background: var(--card-bg); padding: 25px; border-radius: 12px; width: 260px; border: 1px solid #222; }
+        .feature-card h3 { color: var(--gold); margin-top: 0; font-size: 1.3rem; }
+        
+        .footer { padding: 40px 20px; font-size: 0.8rem; color: #555; background: #050505; border-top: 1px solid #111; }
+        .footer p { max-width: 700px; margin: 8px auto; }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 1.6rem; }
+            .bonus-amount { font-size: 2.2rem; }
+            .cta-button { width: 85%; padding: 18px 10px; font-size: 1.2rem; }
+            .main-logo { max-width: 180px; }
+        }
     </style>
 </head>
 <body>
 
     <section class="hero">
+        <div class="logo-wrapper">
+            <a href="https://go.newsspinlynx.com/visit/?bta=35240&brand=spinlynx">
+                <img src="https://i.imgur.com/bDTbw0X.png" alt="SpinLynx Logo" class="main-logo">
+            </a>
+        </div>
+
         <h1>Massive Welcome Boost</h1>
         <span class="bonus-amount">€5,000 + 500 FREE SPINS</span>
-        <p>Start playing like a high roller from your very first spin.</p>
-        <a href="https://go.newsspinlynx.com/visit/?bta=35240&brand=spinlynx" class="cta-button">Claim Bonus Now</a>
+        
+        <div class="timer-container">
+            <div class="timer-label">Bonus Expires In:</div>
+            <div id="countdown">23:59:59</div>
+        </div>
+
+        <p style="font-size: 1.1rem; max-width: 550px; margin: 10px auto; color: #ccc;">Start playing like a high roller from your very first spin at SpinLynx.</p>
+        
+        <a href="https://go.newsspinlynx.com/visit/?bta=35240&brand=spinlynx" class="cta-button">Grab My Bonus Now</a>
     </section>
 
     <section class="features">
         <div class="feature-card">
-            <h3>Elite Games</h3>
-            <p>2,000+ Slots & Live Tables</p>
+            <h3>VIP Status</h3>
+            <p>Unlock high-limit tables and premium support immediately.</p>
+        </div>
+        <div class="feature-card">
+            <h3>500 Free Spins</h3>
+            <p>Enjoy the most popular slots on the house.</p>
         </div>
         <div class="feature-card">
             <h3>Fast Payouts</h3>
-            <p>Priority withdrawals for VIPs</p>
-        </div>
-        <div class="feature-card">
-            <h3>Secure Play</h3>
-            <p>Fully Licensed & Regulated</p>
+            <p>Lightning-fast withdrawals for our winners.</p>
         </div>
     </section>
 
     <footer class="footer">
-        <p>18+ | Play Responsibly | Terms & Conditions Apply</p>
-        <p>This offer is for new players only. BeGambleAware.org</p>
+        <p><strong>18+ Only.</strong> Please gamble responsibly. New customers only. Terms and Conditions apply. BeGambleAware.org</p>
+        <p>© 2024 SpinLynx Promotional Partner. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // Dynamic 24-hour countdown
+        function startTimer(duration, display) {
+            var timer = duration, hours, minutes, seconds;
+            setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = hours + ":" + minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration; 
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            var twentyFourHours = 24 * 60 * 60;
+            var display = document.querySelector('#countdown');
+            startTimer(twentyFourHours, display);
+        };
+    </script>
 
 </body>
 </html>
