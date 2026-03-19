@@ -3,210 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIP Exclusive | €5,000 Welcome Offer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>VIP Welcome Offer - Claim Your €5,000</title>
     <style>
         :root {
             --gold: #d4af37;
-            --gold-light: #f1d592;
-            --dark-bg: #050505;
-            --card-bg: rgba(26, 26, 26, 0.6);
+            --gold-glow: rgba(212, 175, 55, 0.3);
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
             --text-white: #ffffff;
-            --accent-glow: rgba(212, 175, 55, 0.3);
         }
 
         body {
             margin: 0;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Playfair Display', 'Segoe UI', serif; /* More sophisticated font choice */
             background-color: var(--dark-bg);
             color: var(--text-white);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        /* Sophisticated Background */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 30%, #1a1a1a 0%, #050505 100%);
-            z-index: -1;
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+            border-bottom: 2px solid var(--gold);
+            overflow: hidden;
         }
 
         .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header / Logo Section */
-        header {
-            padding: 30px 0;
-            text-align: center;
-        }
-
-        .brand-logo {
-            max-width: 280px;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.2));
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 40px 0 80px;
-            text-align: center;
-        }
-
-        .hero-image-main {
+            max-width: 1200px;
             width: 100%;
-            max-width: 600px;
-            margin-bottom: 20px;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .hero-asset {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-asset img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 30px var(--gold-glow));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
         h1 {
             font-size: 1.2rem;
-            letter-spacing: 5px;
-            text-transform: uppercase;
             color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 5px;
             margin-bottom: 10px;
-            font-weight: 400;
         }
 
         .bonus-amount {
-            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-size: 4.5rem;
             font-weight: 900;
             display: block;
             margin: 10px 0;
-            background: linear-gradient(to bottom, #fff 20%, var(--gold) 100%);
+            line-height: 1.1;
+            background: linear-gradient(to right, #fff, var(--gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.4));
-            line-height: 1.1;
         }
 
-        .hero p {
+        p {
             font-size: 1.2rem;
-            color: #bbb;
-            max-width: 600px;
-            margin: 20px auto;
+            color: #ccc;
+            margin-bottom: 30px;
         }
 
-        /* Animated CTA Button */
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #d4af37 0%, #f1d592 50%, #d4af37 100%);
-            background-size: 200% auto;
-            color: #000;
+            background: linear-gradient(135deg, #d4af37 0%, #f9e29c 50%, #b8860b 100%);
+            color: black;
             padding: 22px 50px;
-            font-size: 1.4rem;
-            font-weight: 900;
+            font-size: 1.1rem;
+            font-weight: bold;
             text-decoration: none;
-            border-radius: 4px; /* Squared edges look more "Elite" */
-            margin-top: 20px;
-            transition: 0.5s;
+            border-radius: 4px; /* Squared edges often feel more premium than round */
+            transition: all 0.3s ease;
             text-transform: uppercase;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            to { background-position: 200% center; }
+            letter-spacing: 2px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px var(--gold);
-            letter-spacing: 1px;
+            box-shadow: 0 15px 30px var(--gold-glow);
         }
 
-        /* Features Section with Glassmorphism */
         .features {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            padding: 60px 20px;
-            flex-wrap: wrap;
+            gap: 30px;
+            padding: 80px 20px;
+            background: #050505;
         }
 
         .feature-card {
             background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 15px;
+            padding: 40px 20px;
+            border-radius: 2px;
             width: 280px;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            transition: 0.3s;
-            text-align: center;
+            border: 1px solid #333;
+            transition: border-color 0.3s;
         }
 
         .feature-card:hover {
-            border: 1px solid var(--gold);
-            background: rgba(212, 175, 55, 0.05);
+            border-color: var(--gold);
         }
 
         .feature-card h3 {
             color: var(--gold);
-            margin-top: 0;
             text-transform: uppercase;
-            font-size: 1rem;
             letter-spacing: 2px;
+            font-size: 1rem;
         }
 
-        /* Footer */
         .footer {
-            padding: 60px 20px;
+            padding: 60px;
             font-size: 0.75rem;
             color: #666;
+            border-top: 1px solid #222;
             text-align: center;
-            background: rgba(0,0,0,0.5);
         }
 
-        .footer p { margin: 5px 0; }
-
-        @media (max-width: 768px) {
-            .features { flex-direction: column; align-items: center; }
-            .feature-card { width: 90%; }
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text {
+                text-align: center;
+                order: 2;
+            }
+            .hero-asset {
+                order: 1;
+                margin-bottom: 30px;
+            }
+            .bonus-amount {
+                font-size: 3rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="https://i.imgur.com/bDTbw0X.png" alt="VIP Casino Logo" class="brand-logo">
-    </header>
-
-    <div class="container">
-        <section class="hero">
-            <img src="https://i.imgur.com/TRTGr1x.png" alt="VIP Welcome" class="hero-image-main">
+    <section class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <h1>Massive Welcome Boost</h1>
+                <span class="bonus-amount">€5,000 + 500 FREE SPINS</span>
+                <p>Start playing like a high roller from your very first spin.</p>
+                <a href="://go.newsspinlynx.com/visit/?bta=35240&brand=spinlynx" class="cta-button">Claim Exclusive Access</a>
+            </div>
             
-            <h1>Premium Member Access</h1>
-            <span class="bonus-amount">€5,000 + 500<br>FREE SPINS</span>
-            <p>Experience the ultimate in luxury gaming. Exclusive rewards and priority service await.</p>
-            
-            <a href="YOUR_AFFILIATE_LINK_HERE" class="cta-button">Claim Your Tier Now</a>
-        </section>
+            <div class="hero-asset">
+                <img src="https://i.imgur.com/bDTbw0X.png" alt="VIP Bonus Asset">
+            </div>
+        </div>
+    </section>
 
-        <section class="features">
-            <div class="feature-card">
-                <h3>Elite Games</h3>
-                <p>Curated selection of 2,000+ high-stakes slots and live tables.</p>
-            </div>
-            <div class="feature-card">
-                <h3>VIP Payouts</h3>
-                <p>Lightning-fast withdrawals with dedicated account managers.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Total Security</h3>
-                <p>SSL-encrypted transactions and fully regulated fair play.</p>
-            </div>
-        </section>
-    </div>
+    <section class="features">
+        <div class="feature-card">
+            <h3>Elite Games</h3>
+            <p>2,000+ Slots & Live Tables</p>
+        </div>
+        <div class="feature-card">
+            <h3>Fast Payouts</h3>
+            <p>Priority withdrawals for VIPs</p>
+        </div>
+        <div class="feature-card">
+            <h3>Secure Play</h3>
+            <p>Fully Licensed & Regulated</p>
+        </div>
+    </section>
 
     <footer class="footer">
-        <p>18+ | PLEASE GAMBLE RESPONSIBLY | TERMS & CONDITIONS APPLY</p>
-        <p>This offer is strictly for new verified players only. Gambling can be addictive.</p>
-        <p>&copy; 2026 VIP ELITE CLUB. ALL RIGHTS RESERVED.</p>
+        <p>18+ | Play Responsibly | Terms & Conditions Apply</p>
+        <p>This offer is for new players only. BeGambleAware.org</p>
     </footer>
 
 </body>
