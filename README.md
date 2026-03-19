@@ -203,7 +203,7 @@
             <span class="tag">Editor's Choice</span>
             <h2>Spinlynx</h2>
             <div class="bonus-highlight">400% Match up to €2,000</div>
-            <p style="color: var(--text-dim); margin: 0;">+ 250 Exclusive Free Spins</p>
+            <p style="color: var(--text-dim); margin: 0;">+ 200 Exclusive Free Spins</p>
         </div>
         <div class="cta-section">
             <a href="https://go.newsspinlynx.com/visit/?bta=35240&brand=spinlynx" class="play-btn">Claim Now</a>
