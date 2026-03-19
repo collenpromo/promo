@@ -3,166 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIP Welcome Boost - €5,000 + 500 Free Spins</title>
+    <title>VIP Exclusive | €5,000 Welcome Offer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #d4af37;
-            --gold-glow: rgba(212, 175, 55, 0.6);
-            --dark-bg: #0a0a0a;
-            --card-bg: #161616;
+            --gold-light: #f1d592;
+            --dark-bg: #050505;
+            --card-bg: rgba(26, 26, 26, 0.6);
             --text-white: #ffffff;
+            --accent-glow: rgba(212, 175, 55, 0.3);
         }
+
         body {
             margin: 0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: var(--dark-bg);
             color: var(--text-white);
-            text-align: center;
             line-height: 1.6;
-        }
-        .hero {
-            padding: 60px 20px;
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1596838132731-dd9d7a8383b9?auto=format&fit=crop&q=80&w=1200') center/cover;
-            border-bottom: 2px solid var(--gold);
-        }
-        
-        /* Logo Styling */
-        .logo-wrapper {
-            margin-bottom: 30px;
-        }
-        .main-logo {
-            max-width: 220px;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
-        .main-logo:hover {
-            transform: scale(1.05);
+            overflow-x: hidden;
         }
 
-        h1 { font-size: 2.2rem; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0; }
-        
-        .bonus-amount { 
-            font-size: clamp(2.5rem, 8vw, 4.5rem); 
-            font-weight: 900; 
-            display: block; 
-            margin: 15px 0; 
-            color: #fff;
-            text-shadow: 0 0 20px var(--gold-glow); 
+        /* Sophisticated Background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 30%, #1a1a1a 0%, #050505 100%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Logo Section */
+        header {
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .brand-logo {
+            max-width: 280px;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.2));
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 40px 0 80px;
+            text-align: center;
+        }
+
+        .hero-image-main {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            font-size: 1.2rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .bonus-amount {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            display: block;
+            margin: 10px 0;
+            background: linear-gradient(to bottom, #fff 20%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.4));
             line-height: 1.1;
         }
-        
-        /* Timer Styles */
-        .timer-container {
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--gold);
-            display: inline-block;
-            padding: 12px 25px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        .timer-label { font-size: 0.8rem; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; font-weight: bold; letter-spacing: 1px; }
-        #countdown { font-family: 'Courier New', monospace; font-size: 1.8rem; font-weight: bold; letter-spacing: 2px; color: #fff; }
 
+        .hero p {
+            font-size: 1.2rem;
+            color: #bbb;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        /* Animated CTA Button */
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #f9df7b 0%, #d4af37 50%, #b38728 100%);
+            background: linear-gradient(135deg, #d4af37 0%, #f1d592 50%, #d4af37 100%);
+            background-size: 200% auto;
             color: #000;
-            padding: 20px 45px;
-            font-size: 1.5rem;
-            font-weight: 800;
+            padding: 22px 50px;
+            font-size: 1.4rem;
+            font-weight: 900;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 25px;
-            transition: all 0.3s ease;
+            border-radius: 4px; /* Squared edges look more "Elite" */
+            margin-top: 20px;
+            transition: 0.5s;
             text-transform: uppercase;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            animation: shine 3s infinite;
         }
-        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 12px 25px var(--gold-glow); }
 
-        .features { display: flex; justify-content: center; gap: 20px; padding: 50px 20px; flex-wrap: wrap; }
-        .feature-card { background: var(--card-bg); padding: 25px; border-radius: 12px; width: 260px; border: 1px solid #222; }
-        .feature-card h3 { color: var(--gold); margin-top: 0; font-size: 1.3rem; }
-        
-        .footer { padding: 40px 20px; font-size: 0.8rem; color: #555; background: #050505; border-top: 1px solid #111; }
-        .footer p { max-width: 700px; margin: 8px auto; }
-        
-        @media (max-width: 600px) {
-            h1 { font-size: 1.6rem; }
-            .bonus-amount { font-size: 2.2rem; }
-            .cta-button { width: 85%; padding: 18px 10px; font-size: 1.2rem; }
-            .main-logo { max-width: 180px; }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px var(--gold);
+            letter-spacing: 1px;
+        }
+
+        /* Features Section with Glassmorphism */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 60px 20px;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            width: 280px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            border: 1px solid var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .feature-card h3 {
+            color: var(--gold);
+            margin-top: 0;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 2px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 20px;
+            font-size: 0.75rem;
+            color: #666;
+            text-align: center;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .footer p { margin: 5px 0; }
+
+        @media (max-width: 768px) {
+            .features { flex-direction: column; align-items: center; }
+            .feature-card { width: 90%; }
         }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <div class="logo-wrapper">
-            <a href="https://go.newsspinlynx.com/visit/?bta=35240&brand=spinlynx">
-                <img src="https://i.imgur.com/bDTbw0X.png" alt="SpinLynx Logo" class="main-logo">
-            </a>
-        </div>
+    <header>
+        <img src="https://i.imgur.com/bDTbw0X.png" alt="VIP Casino Logo" class="brand-logo">
+    </header>
 
-        <h1>Massive Welcome Boost</h1>
-        <span class="bonus-amount">€5,000 + 500 FREE SPINS</span>
-        
-        <div class="timer-container">
-            <div class="timer-label">Bonus Expires In:</div>
-            <div id="countdown">23:59:59</div>
-        </div>
+    <div class="container">
+        <section class="hero">
+            <img src="https://i.imgur.com/TRTGr1x.png" alt="VIP Welcome" class="hero-image-main">
+            
+            <h1>Premium Member Access</h1>
+            <span class="bonus-amount">€5,000 + 500<br>FREE SPINS</span>
+            <p>Experience the ultimate in luxury gaming. Exclusive rewards and priority service await.</p>
+            
+            <a href="YOUR_AFFILIATE_LINK_HERE" class="cta-button">Claim Your Tier Now</a>
+        </section>
 
-        <p style="font-size: 1.1rem; max-width: 550px; margin: 10px auto; color: #ccc;">Start playing like a high roller from your very first spin at SpinLynx.</p>
-        
-        <a href="https://go.newsspinlynx.com/visit/?bta=35240&brand=spinlynx" class="cta-button">Grab My Bonus Now</a>
-    </section>
-
-    <section class="features">
-        <div class="feature-card">
-            <h3>VIP Status</h3>
-            <p>Unlock high-limit tables and premium support immediately.</p>
-        </div>
-        <div class="feature-card">
-            <h3>500 Free Spins</h3>
-            <p>Enjoy the most popular slots on the house.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Fast Payouts</h3>
-            <p>Lightning-fast withdrawals for our winners.</p>
-        </div>
-    </section>
+        <section class="features">
+            <div class="feature-card">
+                <h3>Elite Games</h3>
+                <p>Curated selection of 2,000+ high-stakes slots and live tables.</p>
+            </div>
+            <div class="feature-card">
+                <h3>VIP Payouts</h3>
+                <p>Lightning-fast withdrawals with dedicated account managers.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Total Security</h3>
+                <p>SSL-encrypted transactions and fully regulated fair play.</p>
+            </div>
+        </section>
+    </div>
 
     <footer class="footer">
-        <p><strong>18+ Only.</strong> Please gamble responsibly. New customers only. Terms and Conditions apply. BeGambleAware.org</p>
-        <p>© 2024 SpinLynx Promotional Partner. All Rights Reserved.</p>
+        <p>18+ | PLEASE GAMBLE RESPONSIBLY | TERMS & CONDITIONS APPLY</p>
+        <p>This offer is strictly for new verified players only. Gambling can be addictive.</p>
+        <p>&copy; 2026 VIP ELITE CLUB. ALL RIGHTS RESERVED.</p>
     </footer>
-
-    <script>
-        // Dynamic 24-hour countdown
-        function startTimer(duration, display) {
-            var timer = duration, hours, minutes, seconds;
-            setInterval(function () {
-                hours = parseInt(timer / 3600, 10);
-                minutes = parseInt((timer % 3600) / 60, 10);
-                seconds = parseInt(timer % 60, 10);
-
-                hours = hours < 10 ? "0" + hours : hours;
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                display.textContent = hours + ":" + minutes + ":" + seconds;
-
-                if (--timer < 0) {
-                    timer = duration; 
-                }
-            }, 1000);
-        }
-
-        window.onload = function () {
-            var twentyFourHours = 24 * 60 * 60;
-            var display = document.querySelector('#countdown');
-            startTimer(twentyFourHours, display);
-        };
-    </script>
 
 </body>
 </html>
