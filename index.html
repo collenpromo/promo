@@ -7,178 +7,200 @@
     <style>
         :root {
             --gold: #d4af37;
-            --gold-glow: rgba(212, 175, 55, 0.3);
+            --gold-glow: rgba(212, 175, 55, 0.4);
             --dark-bg: #0a0a0a;
-            --card-bg: #1a1a1a;
+            --card-bg: #161616;
             --text-white: #ffffff;
         }
 
         body {
             margin: 0;
-            font-family: 'Playfair Display', 'Segoe UI', serif; /* More sophisticated font choice */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--dark-bg);
             color: var(--text-white);
-            line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* Header & Logo */
+        header {
+            padding: 30px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, #1a1a1a, #0a0a0a);
+        }
+
+        .logo-link {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-link:hover {
+            transform: scale(1.05);
+        }
+
+        .main-logo {
+            max-width: 220px;
+            height: auto;
+        }
+
+        /* Hero Section */
         .hero {
-            min-height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 40px;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 40px 5%;
+            min-height: 70vh;
+            background: radial-gradient(circle at 30% 50%, #1a1a1a 0%, #0a0a0a 100%);
             border-bottom: 2px solid var(--gold);
-            overflow: hidden;
         }
 
-        .container {
+        .hero-container {
+            display: flex;
             max-width: 1200px;
             width: 100%;
-            display: flex;
             align-items: center;
-            justify-content: space-between;
             gap: 40px;
         }
 
-        .hero-text {
+        .hero-content {
             flex: 1;
             text-align: left;
         }
 
-        .hero-asset {
+        .hero-image-wrap {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .hero-asset img {
+        .hero-image-wrap img {
             max-width: 100%;
             height: auto;
-            filter: drop-shadow(0 0 30px var(--gold-glow));
-            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px var(--gold-glow));
+            animation: floating 4s ease-in-out infinite;
         }
 
-        @keyframes float {
+        @keyframes floating {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
         }
 
         h1 {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: var(--gold);
             text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 10px;
+            letter-spacing: 3px;
+            margin: 0;
         }
 
         .bonus-amount {
-            font-size: 4.5rem;
+            font-size: 4rem;
             font-weight: 900;
             display: block;
-            margin: 10px 0;
-            line-height: 1.1;
-            background: linear-gradient(to right, #fff, var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin: 15px 0;
+            line-height: 1;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
 
-        p {
+        .hero-content p {
             font-size: 1.2rem;
             color: #ccc;
             margin-bottom: 30px;
         }
 
+        /* Buttons */
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #d4af37 0%, #f9e29c 50%, #b8860b 100%);
-            color: black;
-            padding: 22px 50px;
-            font-size: 1.1rem;
+            background: linear-gradient(135deg, #d4af37 0%, #f9e29c 100%);
+            color: #000;
+            padding: 20px 45px;
+            font-size: 1.4rem;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 4px; /* Squared edges often feel more premium than round */
-            transition: all 0.3s ease;
+            border-radius: 5px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px var(--gold-glow);
+            box-shadow: 0 8px 25px var(--gold-glow);
+            filter: brightness(1.1);
         }
 
+        /* Features */
         .features {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            padding: 80px 20px;
+            gap: 20px;
+            padding: 60px 20px;
+            flex-wrap: wrap;
             background: #050505;
         }
 
         .feature-card {
             background: var(--card-bg);
-            padding: 40px 20px;
-            border-radius: 2px;
+            padding: 30px;
+            border-radius: 12px;
             width: 280px;
             border: 1px solid #333;
-            transition: border-color 0.3s;
-        }
-
-        .feature-card:hover {
-            border-color: var(--gold);
+            text-align: center;
         }
 
         .feature-card h3 {
             color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 1rem;
+            margin-top: 0;
+            letter-spacing: 1px;
         }
 
         .footer {
-            padding: 60px;
-            font-size: 0.75rem;
+            padding: 40px;
+            font-size: 0.8rem;
             color: #666;
-            border-top: 1px solid #222;
             text-align: center;
+            border-top: 1px solid #222;
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 992px) {
-            .container {
+        /* Responsive Layout */
+        @media (max-width: 900px) {
+            .hero-container {
                 flex-direction: column;
                 text-align: center;
             }
-            .hero-text {
+            .hero-content {
                 text-align: center;
                 order: 2;
             }
-            .hero-asset {
+            .hero-image-wrap {
                 order: 1;
                 margin-bottom: 30px;
             }
             .bonus-amount {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
         }
     </style>
 </head>
 <body>
 
+    <header>
+        <a href="https://go.newsspinlynx.com/visit/?bta=35240&brand=spinlynx" class="logo-link">
+            <img src="https://i.imgur.com/bDTbw0X.png" alt="SpinLynx Logo" class="main-logo">
+        </a>
+    </header>
+
     <section class="hero">
-        <div class="container">
-            <div class="hero-text">
+        <div class="hero-container">
+            <div class="hero-content">
                 <h1>Massive Welcome Boost</h1>
                 <span class="bonus-amount">€5,000 + 500 FREE SPINS</span>
                 <p>Start playing like a high roller from your very first spin.</p>
-                <a href="://go.newsspinlynx.com/visit/?bta=35240&brand=spinlynx" class="cta-button">Claim Exclusive Access</a>
+                <a href="https://go.newsspinlynx.com/visit/?bta=35240&brand=spinlynx" class="cta-button">Claim Bonus Now</a>
             </div>
-            
-            <div class="hero-asset">
-                <img src="https://i.imgur.com/bDTbw0X.png" alt="VIP Bonus Asset">
+
+            <div class="hero-image-wrap">
+                <img src="https://i.imgur.com/lDNEmvi.png" alt="VIP Reward">
             </div>
         </div>
     </section>
